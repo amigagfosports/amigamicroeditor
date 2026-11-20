@@ -1,0 +1,22 @@
+#!/bin/sh
+set -eu
+
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+editor="$root/micro"
+
+if [ -t 0 ] && [ -t 1 ]; then
+    exec "$editor" "$@"
+fi
+
+if command -v x-terminal-emulator >/dev/null 2>&1; then
+    exec x-terminal-emulator -e "$editor" "$@"
+fi
+if command -v xterm >/dev/null 2>&1; then
+    exec xterm -title GFOpenMicro -e "$editor" "$@"
+fi
+if command -v gnome-terminal >/dev/null 2>&1; then
+    exec gnome-terminal -- "$editor" "$@"
+fi
+
+echo "GFOpenMicro needs a terminal. Run $editor from a shell." >&2
+exit 1
