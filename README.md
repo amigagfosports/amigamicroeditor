@@ -6,6 +6,15 @@
 [![Join the chat at https://gitter.im/zyedidia/micro](https://badges.gitter.im/zyedidia/micro.svg)](https://gitter.im/zyedidia/micro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Snap Status](https://snapcraft.io/micro/badge.svg)](https://snapcraft.io/micro)
 
+## GFOS port
+
+This fork adds a release-candidate package for the GFOS appliance host. It
+builds the unchanged Micro editor for Linux x86-64 and ARM64, adds a desktop
+launcher, preserves the MIT and third-party notices, and validates both
+archives on the organisation's local LumaVault runner. See
+[`package/README-GFOS.md`](package/README-GFOS.md) for the exact boundary: this
+is a host terminal application, not an m68k or ACX86 guest binary.
+
 **micro** is a terminal-based text editor that aims to be easy to use and intuitive, while also taking advantage of the capabilities
 of modern terminals. It comes as a single, batteries-included, static binary with no dependencies; you can download and use it right now!
 
